@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" >
+		<title>复旦白泽AI大模型安全评测体系</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/png" href="./static/logos/whitzard.png" >		
+		<!-- Google Fonts -->
+				<link href="https://fonts.googleapis.com/css?family=Rubik:100,200,300,400,600,500,700,800,900|Karla:100,200,300,400,500,600,700,800,900&amp;subset=latin" rel="stylesheet">
+				<!-- Bootstrap 4.3.1 CSS -->
+		<link rel="stylesheet" href="./static/css/bootstrap.min.css">
+		<!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
+		<link rel="stylesheet" type="text/css" href="./static/css/slick.css"/>
+		<!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
+		<link rel="stylesheet" href="./static/css/jquery.fancybox.min.css" />
+		<!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
+		<link href="./static/css/aos.css" rel="stylesheet">
+		<!-- FontAwesome CSS -->
+		<link rel="stylesheet" href="./static/css/all.css">
+		<!-- Startup 3 CSS (Styles for all blocks) -->
+		<link href="./static/css/style.css" rel="stylesheet" />
+				<!-- jQuery 3.3.1 -->
+		<script src="./static/js/jquery-3.3.1.min.js"></script>
+			</head> 
+	<body>
+
+<!-- Navigation 1 -->
+
+<nav class="navigation_1 bg-light pt-30 pb-20 text-center"  style="z-index: 3;">
+	<div class="container px-xl-0">
+		<div class="row justify-content-center align-items-center f-16">
+			<div class="mb-20 mb-lg-0 col-lg-6 text-lg-left" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300"><img src="./static/logos/whitzard.png" height="60" class="mr-10">
+				<a href="./" class="logo link color-main">复旦白泽指数</a>
+			</div>
+			<div class="col-lg-6 text-right" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+				<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					2024年夏季赛天梯
+				</button>
+				<div class="dropdown-menu dropdown-menu-right text-left">
+					<button class="dropdown-item" type="button" onclick="window.location.href ='./'">中文赛道</button>
+					<button class="dropdown-item" type="button">英文赛道（建设中）</button>
+				</div>
+				<button type="button" class="btn btn-warning" onclick="window.open('https://github.com/WhitzardIndex/WhitzardBench-2024A')">评测问题下载</button>
+				<!-- <a href="./circus_43D23E941FF874F69310B980DBC7C855" class="link color-main mx-15">天梯可视化</a> -->
+				<button class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">关于我们</button>
+				<a class="ml-20 mr-20" data-toggle="modal" data-target=".bd-example-modal-lg"><b><a class="link color-main" href="./">中</a></b> | <a class="link color-main" href="./">EN</a></a>
+			</div>
+			<!-- <div class="mt-20 mt-lg-0 col-lg-3 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
+				<a href="#" class="mr-20 link color-main">Sign In</a>
+				<a href="#" class="btn sm action-2 f-16">Sign Up</a>
+			</div> -->
+		</div>
+	</div>
+</nav>
+
+
+
+
+<section class="feature_2 bg-light pt-30 pb-45 text-center">
+	<div class="container px-xl-0">
+		<div class="row justify-content-left">
+			<div class="col-xl-12 col-lg-12 _model-info_12chx_2 svg-background">
+                <h3 style="text-align: left;">Qwen-Plus</h3>
+                <br>
+                <h5 style="text-align: left;">研发机构：阿里 </h5>
+                <br>
+                <h5 style="text-align: left;">网站：<a href="https://dashscope.aliyun.com/" style="color:white"><u>https://dashscope.aliyun.com/</u></a></h5>
+            </div>
+        </div>
+	</div>
+</section>
+
+<section class="feature_2 bg-light text-center">
+    <div class="container px-xl-0">
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">违规率（类型）</a>
+  </li>  
+  <li class="nav-item">
+      <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">违规率（难度）</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane show active border" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <div id="l1_container" style="height: 600px"></div>
+  </div>
+    <div class="tab-pane fade active border" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div id="l2_container" style="height: 600px"></div>
+    </div>
+  </div>
+
+
+
+<div class="col-xl-10 col-lg-10 all"></div>
+<div class="row justify-content-center">
+
+    <!-- <div class="tab-content col-xl-3 col-lg-3 a1"></div>
+    <div class="tab-content col-xl-3 col-lg-3 a2"></div> -->
+</div>
+<div class="row justify-content-left">
+    <!-- <div class="tab-content col-xl-3 col-lg-3 a3"></div>
+    <div class="tab-content col-xl-3 col-lg-3 a4"></div>
+    <div class="tab-content col-xl-3 col-lg-3 a5"></div> -->
+</div>
+</div>
+</section>
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="exampleModalLabel">关于我们</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			<p>我们是来自复旦大学系统软件与安全实验室的安全研究团队，欢迎与我们共同探讨AI大模型安全。</p>
+			<div class="text-left">
+				<p>联系方式：WhitzardIndex@outlook.com</p>
+			</div>
+			</div>
+		  </div>
+		  </div>
+	</div>
+  </div>
+
+
+<footer class="footer_1 bg-light pt-75 pb-65 text-center">
+	<div class="container px-xl-0">
+		<div class="row justify-content-between align-items-center lh-40 links">
+			<div class="col-lg-4 col-sm-6 text-sm-right text-lg-left order-1 order-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
+				<a href="#" class="mx-15 link color-main">Copyright@复旦白泽战队 (2013-2024)</a>
+			</div>
+			<div class="mb-10 mb-lg-0 col-lg-auto order-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+				<a href="#" class="logo link color-main">复旦白泽指数</a>
+			</div>
+			<div class="col-lg-4 col-sm-6 text-sm-left text-lg-right order-2 order-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
+				<a href="#" class="mr-15 link color-main">联系方式</a>
+				<a href="mailto:WhitzardIndex@outlook.com" class="mx-15 link color-main">WhitzardIndex@outlook.com</a>
+				<!-- <a href="#" class="mx-15 link color-main"><i class="fas fa-home"></i></a> -->
+				<!-- <a href="#" class="ml-15 link color-main"><i class="fab fa-weixin"></i></a> -->
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="mt-10 col-xl-4 col-lg-5 col-md-6 col-sm-8" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+				<div class="color-heading text-adaptive">
+					基于自研大模型靶向安全对抗技术，生成海量高危诱导问题，高效挖掘AI大模型高风险生成行为
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+<!-- Bootstrap 4.3.1 JS -->
+<script src="./static/js/bootstrap.bundle.min.js"></script>
+<!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
+<script src="./static/js/jquery.fancybox.min.js"></script>
+<!-- Google maps JS API -->
+<script type="text/javascript" src="./static/js/font.js"></script>
+<!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
+<script type="text/javascript" src="./static/js/slick.min.js"></script>
+<!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
+<script src="./static/js/aos.js"></script>
+<!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
+<script src="./static/js/jquery.maskedinput.min.js"></script>
+<script src="./static/js/echarts.min.js"></script>
+<!-- Startup 3 JS (Custom js for all blocks) -->
+<script src="./static/js/script.js"></script>
+
+<script type="text/javascript">
+  var dom = document.getElementById('l2_container');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
+  option = {
+  title: [
+      {
+
+      text:'Qwen-Plus (阿里)',
+      x:'center',
+      y:'top',
+      textAlign:'left'
+      }
+  ],
+
+  polar: {
+      radius: [30, '80%'],
+  },
+  angleAxis: {
+      max: 100,
+      startAngle: 75,
+      axisLabel: {
+          formatter:"{value}%"
+      },
+      name: '违规率',
+      nameLocation:'start',    //设置name位置  start或者end
+
+      nameTextStyle: {
+
+      color: "#D8D8D9",
+
+      fontSize:16,
+
+      //padding: [0, 0, 0, -10] // 四个数字分别为上右下左与原位置距离
+
+      },
+
+  },
+  radiusAxis: {
+      type: 'category',
+      data: ['入门', '进阶', '专家'],
+      axisLabel: {
+          color: 'black'
+      }
+  },
+  tooltip: {},
+  series: {
+      type: 'bar',
+      data: [{value: 15.0, itemStyle: { color: '#B3E4A1'}}, 
+             {value: 73.5, itemStyle: { color: 'rgb(238, 197, 102)'}}, 
+             {value: 93.8, itemStyle: { color: '#F9713C'}}],
+      coordinateSystem: 'polar',
+  },
+      label: {
+      show: true,
+      position: 'middle',
+      formatter: '{c}%'
+      }
+  };
+
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
+
+  window.addEventListener('resize', myChart.resize);
+</script>
+
+
+
+<script type="text/javascript">
+    var dom = document.getElementById('l1_container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    var option;
+    const lineStyle = {
+  width: 2.0,
+  opacity: 0.5
+};
+option = {
+  backgroundColor: '#161627',
+  title: {
+    text: 'Qwen-Plus (阿里)',
+    left: 'center',
+    textStyle: {
+      color: '#eee'
+    }
+  },
+
+  legend: {
+    bottom: 5,
+    data: ['入门（违规率=15.0%）', '进阶（违规率=73.5%）', '专家（违规率=93.8%）'],
+    itemGap: 20,
+    textStyle: {
+      color: '#fff',
+      fontSize: 18
+    },
+    selectedMode: 'multiple'
+  },
+  radar: {
+    indicator: [
+      { name: '核心价值观', max: 100},
+      { name: '歧视性内容', max: 100,axisLabel:{show:false}},
+      { name: '商业违法违规', max: 100,axisLabel:{show:false}},
+      { name: '侵犯他人权益', max: 100,axisLabel:{show:false}},
+      { name: '内容不准确、不科学', max: 100,axisLabel:{show:false}}
+    ],
+    shape: 'circle',
+    splitNumber: 5,
+    axisName: {
+      color: 'rgb(238, 197, 102)',
+      formatter: '{value}',
+        fontSize: 14
+    },
+    axisLabel:{
+    show:true,
+    color:'white',
+    formatter: '{value}%',
+    showMinLabel: false,
+    },
+    splitLine: {
+      lineStyle: {
+        color: [
+          'rgba(238, 197, 102, 0.1)',
+          'rgba(238, 197, 102, 0.2)',
+          'rgba(238, 197, 102, 0.4)',
+          'rgba(238, 197, 102, 0.6)',
+          'rgba(238, 197, 102, 0.8)',
+          'rgba(238, 197, 102, 1)'
+        ].reverse()
+      }
+    },
+    splitArea: {
+      show: false
+    },
+    axisLine: {
+      lineStyle: {
+        color: 'rgba(238, 197, 102, 0.5)'
+      }
+    }
+  },
+  series: [
+    {
+      name: '入门（违规率=15.0%）',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: [[22.5, 6.7, 10.0, 14.3, 50.0]],
+      symbol: 'none',
+      itemStyle: {
+        color: '#B3E4A1'
+      },
+      areaStyle: {
+        opacity: 0.1
+      }
+    },
+    {
+      name: '进阶（违规率=73.5%）',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: [[70.0, 80.0, 50.0, 71.4, 100.0]],
+      symbol: 'none',
+      itemStyle: {
+        color: 'rgb(238, 197, 102)'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    },
+    {
+      name: '专家（违规率=93.8%）',
+      type: 'radar',
+      lineStyle: lineStyle,
+      data: [[92.5, 95.6, 90.0, 92.9, 100.0]],
+      symbol: 'none',
+      itemStyle: {
+        color: '#F9713C'
+      },
+      areaStyle: {
+        opacity: 0.05
+      }
+    }
+  ]
+};
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+</script>
+
+
+
+</body>
+</html>
