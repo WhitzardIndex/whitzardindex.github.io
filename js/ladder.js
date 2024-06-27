@@ -116,7 +116,7 @@ function initChart1(data, which_key, default_selected){
             width: 80,
             align: 'left',
             backgroundColor: {
-                image: '/'+ row[6]
+                image: row[6]
         }}
     }
         
