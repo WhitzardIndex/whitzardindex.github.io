@@ -5,55 +5,63 @@
 		<meta charset="utf-8" >
 		<title>复旦白泽指数</title> <!-- AI大模型安全评测体系 -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="复旦白泽; 复旦大学系统软件与安全实验室; Whitzard; AI Security; AI Safety; Large Language Models; JADE; 大模型安全评测; 基准测试集; benchmark; Fudan University; Large Models; 大模型安全">
-		<link rel="shortcut icon" type="image/png" href="https://whitzardindex.github.io/logos/whitzard.png" >		
+		<link rel="shortcut icon" type="image/png" href="/static/logos/whitzard.png" >		
 		<!-- Google Fonts -->
 				<link href="https://fonts.googleapis.com/css?family=Rubik:100,200,300,400,600,500,700,800,900|Karla:100,200,300,400,500,600,700,800,900&amp;subset=latin" rel="stylesheet">
 				<!-- Bootstrap 4.3.1 CSS -->
-		<link rel="stylesheet" href="https://whitzardindex.github.io/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/bootstrap.min.css">
 		<!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
-		<link rel="stylesheet" type="text/css" href="https://whitzardindex.github.io/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/css/slick.css"/>
 		<!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
-		<link rel="stylesheet" href="https://whitzardindex.github.io/css/jquery.fancybox.min.css" />
+		<link rel="stylesheet" href="/static/css/jquery.fancybox.min.css" />
 		<!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
-		<link href="https://whitzardindex.github.io/css/aos.css" rel="stylesheet">
+		<link href="/static/css/aos.css" rel="stylesheet">
 		<!-- FontAwesome CSS -->
-		<link rel="stylesheet" href="https://whitzardindex.github.io/css/all.css">
+		<link rel="stylesheet" href="/static/css/all.css">
 		<!-- Startup 3 CSS (Styles for all blocks) -->
-		<link href="https://whitzardindex.github.io/css/style.css" rel="stylesheet" />
+		<link href="/static/css/style.css" rel="stylesheet" />
 				<!-- jQuery 3.3.1 -->
-		<script src="https://whitzardindex.github.io/js/jquery-3.3.1.min.js"></script>
-		<script defer src="https://cloud.umami.is/script.js" data-website-id="796aab63-b2a1-47a7-9691-01b17f2b57fa"></script>
+		<script src="/static/js/jquery-3.3.1.min.js"></script>
 	</head> 
 	<body>
 <!-- Navigation 1 -->
 
 
-<nav class="navigation_1 bg-light pt-30 pb-20 text-center"  style="z-index: 3;">
-	<div class="container px-xl-0">
-		<div class="row justify-content-center align-items-center f-16">
-			<div class="mb-20 mb-lg-0 col-lg-6 text-lg-left" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300"><img src="https://whitzardindex.github.io/logos/whitzard.png" height="60" class="mr-10">
-				<a href="./" class="logo link color-main">复旦白泽指数</a>
-			</div>
-			<div class="col-lg-6 text-right" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-				<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					2024年夏季赛天梯
-				</button>
-				<div class="dropdown-menu dropdown-menu-right text-left">
-					<button class="dropdown-item" type="button" onclick="window.location.href ='./'">中文赛道</button>
-					<button class="dropdown-item" type="button">英文赛道（建设中）</button>
-				</div>
-				<button type="button" class="btn btn-warning" onclick="window.open('https://github.com/WhitzardIndex/WhitzardBench-2024A')">评测问题下载</button>
-				<!-- <a href="./circus_43D23E941FF874F69310B980DBC7C855" class="link color-main mx-15">天梯可视化</a> -->
-				<button class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">关于我们</button>
-				<a class="ml-20 mr-20" data-toggle="modal" data-target=".bd-example-modal-lg"><b><a class="link color-main" href="./">中</a></b> | <a class="link color-main" href="./">EN</a></a>
-			</div>
-			<!-- <div class="mt-20 mt-lg-0 col-lg-3 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-				<a href="#" class="mr-20 link color-main">Sign In</a>
-				<a href="#" class="btn sm action-2 f-16">Sign Up</a>
-			</div> -->
+<!-- <nav class="navigation_1 bg-light pt-30 pb-20 text-center"  style="z-index: 3;"> -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light pt-30 pb-20 ">
+		<div class="container px-xl-0 justify-content-left">
+		<div class="mb-20 mb-lg-0 col-lg-6 text-lg-left" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300"><img src="/static/logos/whitzard.png" height="60" class="mr-10">
+			<a href="./" class="logo link color-main">复旦白泽指数</a>
+			<button class="navbar-toggler ml-50" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 		</div>
-	</div>
+
+
+		
+		<div class="collapse navbar-collapse text-lg-right" id="navbarSupportedContent">
+			<div class="dropdown show">
+			<a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				2024年夏季赛天梯
+			  </a>
+			
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			<a class="dropdown-item" href="#">中文赛道</a>
+			<a class="dropdown-item" href="#">英文赛道（建设中）</a>
+			</div>
+		</div>
+
+
+
+			<button type="button" class="btn btn-warning" onclick="window.open('https://github.com/WhitzardIndex/WhitzardBench-2024A')">评测问题下载</button>
+			<button class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">关于我们</button>
+			<a class="mr-100" data-toggle="modal" data-target=".bd-example-modal-lg"><b><a class="link color-main" href="./">中</a></b> | <a class="link color-main" href="./">EN</a></a>
+			<!-- <form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form> -->
+		</div>
+			</div>
 </nav>
 
 
@@ -126,9 +134,9 @@
 <div class="row justify-content-center">
     <div class="col-2">
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><b>24年夏-入门</b><img src="https://whitzardindex.github.io/icons/bronze.png" height="20" class="ml-20"></a>
-        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><b>24年夏-进阶</b><img src="https://whitzardindex.github.io/icons/silver.png" height="20" class="ml-20"></a>
-        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><b>24年夏-专家</b><img src="https://whitzardindex.github.io/icons/gold.png" height="20" class="ml-20"></a>
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><b>24年夏-入门</b><img src="static/icons/bronze.png" height="20" class="ml-20"></a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><b>24年夏-进阶</b><img src="static/icons/silver.png" height="20" class="ml-20"></a>
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><b>24年夏-专家</b><img src="static/icons/gold.png" height="20" class="ml-20"></a>
       </div>
     </div>
     <div class="col-10">
@@ -267,7 +275,7 @@
 			</div>
 			<div class="col-lg-4 col-sm-6 text-sm-left text-lg-right order-2 order-lg-0" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
 				<a href="#" class="mr-15 link color-main">联系方式</a>
-				<a href="mailto:WhitzardIndex@outlook.com" class="mx-15 link color-main">WhitzardIndex@outlook.com</a>
+				<a href="mailto:WhitzardIndex@outlook.com" class="mx-15 link color-main"><i class="fas fa-envelope"></i></a>
 				<!-- <a href="#" class="mx-15 link color-main"><i class="fas fa-home"></i></a> -->
 				<!-- <a href="#" class="ml-15 link color-main"><i class="fab fa-weixin"></i></a> -->
 			</div>
@@ -282,30 +290,30 @@
 	</div>
 </footer>
 
-<script src="https://whitzardindex.github.io/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
 <!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
-<script src="https://whitzardindex.github.io/js/jquery.fancybox.min.js"></script>
+<script src="/static/js/jquery.fancybox.min.js"></script>
 <!-- Google maps JS API -->
-<script type="text/javascript" src="https://whitzardindex.github.io/js/font.js"></script>
+<script type="text/javascript" src="/static/js/font.js"></script>
 <!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
-<script type="text/javascript" src="https://whitzardindex.github.io/js/slick.min.js"></script>
+<script type="text/javascript" src="/static/js/slick.min.js"></script>
 <!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
-<script src="https://whitzardindex.github.io/js/aos.js"></script>
+<script src="/static/js/aos.js"></script>
 <!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
-<script src="https://whitzardindex.github.io/js/jquery.maskedinput.min.js"></script>
-<script src="https://whitzardindex.github.io/js/echarts.min.js"></script>
-<script src="https://whitzardindex.github.io/js/walden.js"></script>
+<script src="/static/js/jquery.maskedinput.min.js"></script>
+<script src="/static/js/echarts.min.js"></script>
+<script src="/static/js/walden.js"></script>
 
 <!-- Startup 3 JS (Custom js for all blocks) -->
-<script src="https://whitzardindex.github.io/js/script.js"></script>
-<script src="https://whitzardindex.github.io/js/ladder.js"></script>
-<!-- <script src="https://whitzardindex.github.io/js/l2_ladder.js"></script> -->
+<script src="/static/js/script.js"></script>
+<script src="/static/js/ladder.js"></script>
+<!-- <script src="/static/js/l2_ladder.js"></script> -->
 
 <!-- Bootstrap 4.3.1 JS -->
 
-<!-- <script src="https://whitzardindex.github.io/js/chart_template.js"></script> -->
+<!-- <script src="/static/js/chart_template.js"></script> -->
 
-<!-- <script src="https://whitzardindex.github.io/js/l3_ladder.js"></script> -->
+<!-- <script src="/static/js/l3_ladder.js"></script> -->
 
 
 </body>

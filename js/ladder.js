@@ -127,9 +127,9 @@ function initChart1(data, which_key, default_selected){
         var row = data[idx]
         model_keys.push(row[1])
         style_dict[row[1]] = row[1].replaceAll('-','').replaceAll('.','').replaceAll(' ','')
-        asrs.push({"value": (100-parseFloat(row[3])), "url": "details-model-id-"+row[7]}+".html")
-        reject_rate.push({"value": -parseFloat(row[4]), "url": "details-model-id-"+row[7]}+".html")
-        safety_index.push({"value": parseFloat(row[5]), "url": "details-model-id-"+row[7]}+".html")
+        asrs.push({"value": (100-parseFloat(row[3])), "url": "details-model-id-"+row[7]+".html"})
+        reject_rate.push({"value": -parseFloat(row[4]), "url": "details-model-id-"+row[7]+".html"})
+        safety_index.push({"value": parseFloat(row[5]), "url": "details-model-id-"+row[7]+".html"})
         rich_infos[style_dict[row[1]]] = {
             height: 20,
             width: 80,
