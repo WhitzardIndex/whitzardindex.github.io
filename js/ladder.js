@@ -20,6 +20,16 @@ ctx.fillText(waterMarkText, 0, 0); // 绘制水印
 // WRITE WATERMARK
 
 
+function is_phone() {
+    //获取浏览器navigator对象的userAgent属性（浏览器用于HTTP请求的用户代理头的值）
+    var info = navigator.userAgent;
+    //通过正则表达式的test方法判断是否包含“Mobile”字符串
+    var isPhone = /mobile/i.test(info);
+    //如果包含“Mobile”（是手机设备）则返回true
+    return isPhone;
+}
+
+
 function draw_ladder(div_name, data_name, title, level, myChart, default_selected=false){
 var dom = document.getElementById(div_name);
 
@@ -83,7 +93,16 @@ function initChart1(data, which_key, default_selected){
     let style_dict = {
   
     }
-   
+    var phone = is_phone()
+    if(phone){
+      top_ratio = ['2%', '10%', '15%']
+      split_number = 2
+      label_position = 'inside'
+    }else{
+      top_ratio = ['2%', '8%', '10%']
+      split_number = 4
+      label_position = 'right'
+    }
     if(which_key == 'inner'){
       data.sort((a, b) => -parseFloat(a[5])+parseFloat(b[5]))
     }else if(which_key == 'outer'){
@@ -108,9 +127,9 @@ function initChart1(data, which_key, default_selected){
         var row = data[idx]
         model_keys.push(row[1])
         style_dict[row[1]] = row[1].replaceAll('-','').replaceAll('.','').replaceAll(' ','')
-        asrs.push({"value": (100-parseFloat(row[3])), "url": "./details-model-id-"+row[7]+".html"})
-        reject_rate.push({"value": -parseFloat(row[4]), "url": "details?model_id="+row[7]+".html"})
-        safety_index.push({"value": parseFloat(row[5]), "url": "details?model_id="+row[7]+".html"})
+        asrs.push({"value": (100-parseFloat(row[3])), "url": "details-model-id-"+row[7]}+".html")
+        reject_rate.push({"value": -parseFloat(row[4]), "url": "details-model-id-"+row[7]}+".html")
+        safety_index.push({"value": parseFloat(row[5]), "url": "details-model-id-"+row[7]}+".html")
         rich_infos[style_dict[row[1]]] = {
             height: 20,
             width: 80,
@@ -122,7 +141,7 @@ function initChart1(data, which_key, default_selected){
         
     const seriesLabel =  {
       show: true,//开启显示
-      position: 'right',//在上方显示
+      position: label_position,//在上方显示
       formatter: function (params) {
         return String(params.value.toFixed(1))+'%';  // 使用 toFixed 方法保留两位小数
       },
@@ -133,20 +152,50 @@ function initChart1(data, which_key, default_selected){
       data: ['安全合规率', '拒答率', '内生安全指数'],
       selected:  {'安全合规率':true, '拒答率':false, '内生安全指数':false},  
       x: 'center',
-      y: 'top'
+      y: 'top',
+      top: top_ratio[1]
       }
     }else{
       var legend_data = {
         data: ['安全合规率', '拒答率', '内生安全指数'], 
         x: 'center',
-        y: 'top'
+        y: 'top',
+        top: top_ratio[1]
         }
     }
 
     let option = {
-      title: {
-          text: title
-  },
+      title:{
+        show:true,//false
+        text:"复旦白泽指数",//主标题文本
+        textStyle:{
+            color:'black',//'red'，字体颜色
+            fontStyle:'normal',//'italic'(倾斜) | 'oblique'(倾斜体) ，字体风格
+            fontWeight:'bold',//'bold'(粗体) | 'bolder'(粗体) | 'lighter'(正常粗细) ，字体粗细
+            fontFamily:'Microsoft YaHei',//'sans-serif' | 'serif' | 'monospace' | 'Arial' | 'Courier New' 
+            // 'Microsoft YaHei'(微软雅黑) ，文字字体
+            fontSize:24,//字体大小
+            lineHeight:18,//字体行高
+        },
+        subtext: title,//副标题文本
+        subtextStyle:{
+            color:"black",//字体颜色
+            fontStyle:'normal',//字体风格
+            fontWeight:'normal',//字体粗细
+            fontFamily:'Microsoft YaHei',//文字字体
+            fontSize:18,//字体大小
+            lineHeight:18,//字体行高
+            align:'center',//'left' | 'right' ，文字水平对齐方式
+            verticalAlign:'middle',//'top' | 'bottom' ，文字垂直对齐方式
+        },
+        textAlign:'auto',//整体（包括 text 和 subtext）的水平对齐
+        textVerticalAlign:'auto',//整体（包括 text 和 subtext）的垂直对齐
+        padding:5,//[5,10] | [ 5,6, 7, 8] ,标题内边距
+        left:'5%',//'5' | '5%'，title 组件离容器左侧的距离
+        right:'auto',//'title 组件离容器右侧的距离
+        top:top_ratio[0],//title 组件离容器上侧的距离
+        bottom:'auto',//title 组件离容器下侧的距离
+    },
   backgroundColor: {//在背景属性中添加
     // type: 'pattern',
     image: canvas,
@@ -162,7 +211,9 @@ function initChart1(data, which_key, default_selected){
   },
   legend: legend_data,
   grid: {
-  left: 150
+  top: top_ratio[2],
+  left: "5%",
+  containLabel: true,
   },
   toolbox: {
   show: true,
@@ -174,6 +225,7 @@ function initChart1(data, which_key, default_selected){
   xAxis: {
   type: 'value',
   position:'top',
+  splitNumber: split_number,
   name: '',
   max: 100,
   axisLabel: {
